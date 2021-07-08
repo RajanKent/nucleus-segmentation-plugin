@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>30.0.0</version>
+		<relativePath />
+	</parent>
+
+	<groupId>edu.kent.iiam</groupId>
+	<artifactId>NucleusSegmentation</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<name>Nucleus Segmentation</name>
+	<description>Automate multichannel fluorescence analysis Fiji Plugin</description>
+	<url>https://www.kent.edu/Nucleus-segmentation/</url>
+	<inceptionYear>2021</inceptionYear>
+	<organization>
+		<name>KSU</name>
+		<url>https://www.kent.edu/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Simplified BSD License</name>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>rmaharj2</id>
+			<name>Rajan Maharjan</name>
+			<url>https://www.kent.edu/rmaharj2</url>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Json Conley</name>
+			<url>https://www.kent.edu/jconley</url>
+			<roles><role>founder</role></roles>
+			<properties><id>jconley</id></properties>
+		</contributor>
+	</contributors>
+
+	<mailingLists>
+		<mailingList>
+			<name>Image.sc Forum</name>
+			<archive>https://forum.image.sc/tags/imagej</archive>
+		</mailingList>
+	</mailingLists>
+
+	<scm>
+		<connection>scm:git:git://github.com/RajanKent/nucleus-segmentation-plugin</connection>
+		<developerConnection>scm:git:git@github.com:RajanKent/nucleus-segmentation-plugin.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/RajanKent/nucleus-segmentation-plugin</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/RajanKent/nucleus-segmentation-plugin/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>None</system>
+	</ciManagement>
+
+	<properties>
+		<package-name>edu.kent.iiam</package-name>
+		<main-class>edu.kent.iiam.NucleusSegmentation</main-class>
+		<license.licenseName>bsd_2</license.licenseName>
+		<license.copyrightOwners>Kent State University</license.copyrightOwners>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>scijava.public</id>
+			<url>https://maven.scijava.org/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej</artifactId>
+		</dependency>
+		
+	
+		<!-- https://mvnrepository.com/artifact/net.imagej/imagej-legacy -->
+		<dependency>
+		    <groupId>net.imagej</groupId>
+		    <artifactId>imagej-legacy</artifactId>
+		    <version>0.37.4</version>
+		</dependency>
+	</dependencies>
+</project>
