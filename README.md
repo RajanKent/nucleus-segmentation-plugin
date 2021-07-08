@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+# Nucleus Segmentation : Automate multichannel fluorescence analysis
+
 This is an nucleus-segmentation-plugin project to Automate multichannel fluorescence analysis - Nucleus Segmentation.
 
 
@@ -73,7 +74,4 @@ Get Started
 
 This ensures that the final `.jar` file will also be copied to
 your ImageJ plugins folder everytime you run the Maven build.
-=======
-# nucleus-segmentation-plugin
-Automate multichannel fluorescence analysis - Nucleus Segmentation
->>>>>>> deca4e81299ca0fcece392a12e12d67f74d3a68e
+
