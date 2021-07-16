@@ -8,43 +8,22 @@
 
 package edu.kent.iiam;
 
-import net.imagej.Dataset;
 import net.imagej.ImageJ;
-import net.imagej.ops.OpService;
-import net.imglib2.RandomAccessibleInterval;
-import net.imglib2.img.Img;
 import net.imglib2.type.numeric.RealType;
 import org.scijava.command.Command;
 import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 import org.scijava.script.ScriptService;
-import org.scijava.ui.UIService;
-
-import net.imagej.ImageJ;
-import net.imglib2.algorithm.labeling.ConnectedComponents;
-import net.imglib2.img.Img;
-import net.imglib2.roi.labeling.ImgLabeling;
-import net.imglib2.roi.labeling.LabelRegions;
-import net.imglib2.type.numeric.IntegerType;
-
 import ij.IJ;
-import ij.ImagePlus;
-
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.print.DocFlavor.URL;
 import javax.script.ScriptException;
 
 @Plugin(type = Command.class, menuPath = "Plugins>NucleusSegmentation")
 public class NucleusSegmentation<T extends RealType<T>> implements Command {
 
-	// @Parameter(label = "Sigma:", description = "Sigma value for GaussFilter.")
-	// private static double sigma = 1.2;
+
 	@Parameter
 	private LogService logService;
 
