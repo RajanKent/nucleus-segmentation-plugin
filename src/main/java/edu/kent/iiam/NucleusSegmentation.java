@@ -56,42 +56,38 @@ public class NucleusSegmentation<T extends RealType<T>> implements Command {
 
 	@Override
 	public void run() {
-		ImageJ ij = new ImageJ();
+		logService.info("Processing NucleusSegmentation...");
 
+		
 		System.out.println("Start NucleusSegmentation... ");
 
 		java.net.URL resource = getClass().getClassLoader().getResource("Macro_12.ijm");
 
 		if (resource == null) {
+			IJ.error("file not found!");
+			// logService.info("file not found!");
 			throw new IllegalArgumentException("file not found!");
 		} else {
-
+			IJ.log(resource.getFile());
+			// IJ.showMessage(resource.getFile());
 			// failed if files have whitespaces or special characters
 			File macro_file =  new File(resource.getFile());
+			// logService.info(resource.getFile());
+
 			// return new File(resource.toURI());
 			System.out.println(macro_file);
 			try {
+				IJ.showMessage(macro_file.getName());
 				scriptService.run(macro_file , true);
 			} catch (FileNotFoundException | ScriptException e) {
+				IJ.error("Error while scriptService ");
+				IJ.error(e.getMessage());
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				IJ.log(e.getStackTrace().toString());
 			}
 		}
-		
-		//		File macro_file;
-		//		try {
-		//			macro_file = (File) ij.io().open(Object.class.getResource("./Macro_12.ijm").getPath());
-		//			System.out.println("Counted " + macro_file);
-		//
-		////				scriptService.run(macro_file , true);
-		//		} catch (IOException e) {
-		//			// TODO Auto-generated catch block
-		//			e.printStackTrace();
-		//			logService.error(e.toString());
-		//			System.out.println("Start NucleusSegmentation... "+ e);
-		//			System.out.println("Start NucleusSegmentation... "+ e.toString());
-		//
-		//		};
+	
 
 	}
 
