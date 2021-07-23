@@ -103,6 +103,7 @@
 		    <groupId>net.imagej</groupId>
 		    <artifactId>imagej-legacy</artifactId>
 		    <version>0.37.4</version>
+		    <!-- <scope>runtime</scope> -->
 		</dependency>
 	
 	</dependencies>
