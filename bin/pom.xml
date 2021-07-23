@@ -49,9 +49,10 @@
 	</developers>
 	<contributors>
 		<contributor>
-			<email>jconle27@kent.edu</email>
-			<name>Jason Conley</name>
-			<roles><role>contributor</role></roles>
+			<name>Json Conley</name>
+			<url>https://www.kent.edu/jconley</url>
+			<roles><role>founder</role></roles>
+			<properties><id>jconley</id></properties>
 		</contributor>
 	</contributors>
 
