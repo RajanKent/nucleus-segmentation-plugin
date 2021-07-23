@@ -49,9 +49,9 @@
 	</developers>
 	<contributors>
 		<contributor>
-			<email>jconle27@kent.edu</email>
 			<name>Jason Conley</name>
-			<roles><role>contributor</role></roles>
+			<roles><role>founder</role></roles>
+			<properties><id>jconle27@kent.edu</id></properties>
 		</contributor>
 	</contributors>
 
@@ -103,7 +103,6 @@
 		    <artifactId>imagej-legacy</artifactId>
 		    <version>0.37.4</version>
 		</dependency>
-	
 		
 	</dependencies>
 </project>
