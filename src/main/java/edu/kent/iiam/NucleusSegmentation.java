@@ -10,63 +10,88 @@ package edu.kent.iiam;
 
 import net.imagej.ImageJ;
 import net.imglib2.type.numeric.RealType;
+
 import org.scijava.command.Command;
 import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 import org.scijava.script.ScriptService;
 import ij.IJ;
-import java.io.File;
-import java.io.FileNotFoundException;
-import javax.script.ScriptException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.concurrent.ExecutionException;
 
 @Plugin(type = Command.class, menuPath = "Plugins>NucleusSegmentation")
 public class NucleusSegmentation<T extends RealType<T>> implements Command {
 
+	private String macro_content = null;
 
 	@Parameter
 	private LogService logService;
 
-	// @Parameter
-	// private File macro_file;
-
 	@Parameter
 	private ScriptService scriptService;
+
+	public String ReadBigStringIn(BufferedReader buffIn) throws IOException {
+		StringBuilder everything = new StringBuilder();
+		String line;
+		while ((line = buffIn.readLine()) != null) {
+			everything.append(line + "\n");
+		}
+		return everything.toString();
+	}
 
 	@Override
 	public void run() {
 		logService.info("Processing NucleusSegmentation...");
 
-		
 		System.out.println("Start NucleusSegmentation... ");
 
-		java.net.URL resource = getClass().getClassLoader().getResource("Macro_12.ijm");
+		java.net.URL resource = getClass().getClassLoader().getResource("nucleus_macro.ijm");
 
 		if (resource == null) {
 			IJ.error("file not found!");
-			// logService.info("file not found!");
+			logService.info("file not found!");
 			throw new IllegalArgumentException("file not found!");
 		} else {
-			IJ.log(resource.getFile());
-			// IJ.showMessage(resource.getFile());
-			// failed if files have whitespaces or special characters
-			File macro_file =  new File(resource.getFile());
-			// logService.info(resource.getFile());
 
-			// return new File(resource.toURI());
-			System.out.println(macro_file);
 			try {
-				IJ.showMessage(macro_file.getName());
-				scriptService.run(macro_file , true);
-			} catch (FileNotFoundException | ScriptException e) {
-				IJ.error("Error while scriptService ");
-				IJ.error(e.getMessage());
-				// TODO Auto-generated catch block
+				System.out.println("Find macro file... ");
+
+				java.io.InputStream in = getClass().getResourceAsStream("/nucleus_macro.ijm");
+
+				BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+				
+				try {
+
+					System.out.println("I'm saving macro file content... ");
+
+					macro_content = ReadBigStringIn(reader);
+
+					// System.out.println(">>>> " + macro_content);
+
+					in.close();
+					reader.close();
+					
+				} catch (IOException e1) {
+					e1.printStackTrace();
+					System.out.println("I'm error when reading macro file");
+
+				}
+
+				scriptService.run(".ijm", macro_content, true).get();
+
+			} catch (InterruptedException | ExecutionException e) {
+				System.out.println(e.getStackTrace().toString());
+
+				IJ.log("Error while scriptService ");
+				IJ.log(e.getMessage());
 				e.printStackTrace();
 				IJ.log(e.getStackTrace().toString());
 			}
 		}
-	
 
 	}
 
