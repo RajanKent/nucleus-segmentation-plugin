@@ -129,7 +129,7 @@ function startNucleusSegmentation(image_path){
 		  SimpleSegmentationMin1 = Dialog.getString();
 		  SimpleSegmentationMax1 = Dialog.getString();
 	  
-	selectWindow("c.tif");
+	selectWindow(img_title);
 	run("Duplicate...", "title=tempDUP duplicate");
 	run("Gaussian Blur...", "sigma=GaussianBlur1 stack");
 	run("Subtract Background...", "rolling=SubtractBackground1 stack");
@@ -196,7 +196,7 @@ function startNucleusSegmentation(image_path){
 		  SimpleSegmentationMin2 = Dialog.getString();
 		  SimpleSegmentationMax2 = Dialog.getString();
 
-	selectWindow("c.tif");
+	selectWindow(img_title);
 	run("Duplicate...", "title=tempDUP duplicate");
 	run("Gaussian Blur...", "sigma=GaussianBlur2 stack");
 	run("Subtract Background...", "rolling=SubtractBackground2 stack");
@@ -234,7 +234,7 @@ function startNucleusSegmentation(image_path){
 	open(myDir+"2.tif");
 	selectWindow(img_title);
 	run("8-bit");
-	run("Merge Channels...", "c1=1.tif c2=c.tif c3=2.tif create");
+	run("Merge Channels...", "c1=1.tif c2="+img_title+" c3=2.tif create");
 
   	setBatchMode(false);
 
