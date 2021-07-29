@@ -49,9 +49,10 @@
 	</developers>
 	<contributors>
 		<contributor>
-			<name>Jason Conley</name>
+			<name>Json Conley</name>
+			<url>https://www.kent.edu/jconley</url>
 			<roles><role>founder</role></roles>
-			<properties><id>jconle27@kent.edu</id></properties>
+			<properties><id>jconley</id></properties>
 		</contributor>
 	</contributors>
 
@@ -102,7 +103,8 @@
 		    <groupId>net.imagej</groupId>
 		    <artifactId>imagej-legacy</artifactId>
 		    <version>0.37.4</version>
-		    <!-- <scope>runtime</scope> -->
 		</dependency>
+	
+		
 	</dependencies>
 </project>
