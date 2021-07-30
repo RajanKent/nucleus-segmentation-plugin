@@ -82,7 +82,7 @@ function startNucleusSegmentation(image_path){
 		// waitForUser("ciao","ciao");
 		close(nucleuolus_tit);
 		close("Statistics for Nucleuolus of NUC "+n+ " - "+img_title);
-		// close("Object*");
+		close("Object*");
 	}
 	close("Statistics*");
 	selectWindow(img_title);
