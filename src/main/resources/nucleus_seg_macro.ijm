@@ -82,7 +82,7 @@ function startNucleusSegmentation(image_path){
 		// waitForUser("ciao","ciao");
 		close(nucleuolus_tit);
 		close("Statistics for Nucleuolus of NUC "+n+ " - "+img_title);
-		close("Object*");
+		// close("Object*");
 	}
 	close("Statistics*");
 	selectWindow(img_title);
@@ -231,7 +231,11 @@ function startNucleusSegmentation(image_path){
 
 		//// ---------- Merge segmentation channels ------------
 	open(myDir+"1.tif");
+	selectWindow("1.tif");
+	run("8-bit");
 	open(myDir+"2.tif");
+	selectWindow("2.tif");
+	run("8-bit");
 	selectWindow(img_title);
 	run("8-bit");
 	run("Merge Channels...", "c1=1.tif c2="+img_title+" c3=2.tif create");
@@ -320,7 +324,7 @@ function nucleolus_per_nucleus(nucleus_object_IMG_tit,img_tit,n){
 }
 
 
-// ----------- Functino for finding nucleolus ----------------------
+// ----------- Function for finding nucleolus ----------------------
 function find_3D_NUCLEOLUS(img_path,img_tit){
 	
 	run("Duplicate...", "title=tempDUP_NUCLEOLUS duplicate");
