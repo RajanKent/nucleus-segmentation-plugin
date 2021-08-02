@@ -2,7 +2,7 @@
 
 This is an nucleus-segmentation-plugin project to Automate multichannel fluorescence analysis - Nucleus Segmentation.
 
-A final project report submitted to ** Kent State University ** in partial fulfilment of the requirement for the degree of **Master of Science in Computer Science**
+A final project report submitted to **Kent State University** in partial fulfilment of the requirement for the degree of **Master of Science in Computer Science**
 
 
 ### Nucleus segmentation
