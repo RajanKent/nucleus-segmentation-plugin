@@ -2,6 +2,75 @@
 
 This is an nucleus-segmentation-plugin project to Automate multichannel fluorescence analysis - Nucleus Segmentation.
 
+A final project report submitted to ** Kent State University** in partial fulfilment of the requirement for the degree of **Master of Science in Computer Science**
+
+
+### Nucleus segmentation
+
+Nucleus segmentation is a fundamental task in microscopy image analysis based on which multiple biological related analysis can be performed. 
+
+Cell or cell nuclei segmentation is typically the first critical step for biomedical microscopy image analysis. On the basis of accurate cell or cell nuclei segmentation, multiple biological or medical analysis can be performed subsequently, including cell type classification, particular cell counting, cell phenotype analysis etc., providing valuable diagnostic information for doctors and researchers. Although conventional image processing techniques are still employed for this time and labor consuming task, they often cannot achieve the optimized performance due to multiple reasons, such as limited capability of dealing with diverse images.
+
+For automating these multichannel image analysis we are using ImageJ image progressing. Specifically we are using the Fiji app (image processing package - distribution of ImageJ2). We can build plugins which facilitate scientific image analysis.
+
+For this project we have developed a plugin to automate the nucleus segmentation with provided image test dataset.
+
+#### Purpose
+
+From this plugin we can get the statistics of the number of nucleus objects and the number of nucleolus present within the nucleus objects with various details about the volume, size, distance etc. And the final stat can be saved in csv format.
+
+
+#### Run Nucleus segmentation plugin / macro
+
+
+#### Prerequisites:
+
+Download the latest Fiji Application with ImageJ2
+[Download link](https://imagej.net/software/fiji/downloads)
+
+Check this update sites:
+
+```
+Help > Update > Manage update sites > 
+```
+
+##### Check these sites
+-  ImageJ
+- Fiji
+- Java-8
+- 3D ImageJ Suite
+- Big-EPFL
+- ResultsToExcel
+
+
+#### How it works:
+
+- We can use this project as plugin or macro
+- As plugin we are packaging macro with in a jar file and running it using script service
+
+
+#### Steps:
+
+1. Select the image dataset
+2. Input the the necessary parameters for segmentation
+3. And analyze final composed image and statistics in the result
+4. Overall segmented result are saved in csv format in following location;
+
+> Downloads>”nucleus_segmentation_results” folder image filename
+
+> Example: c.tif_nuclues_segmentaion_result2.csv
+
+
+###  How to run with jar file:
+
+1. Download the jar file into the jars folder or plugin folder within your Fiji app
+
+2. Restart application and the plugin should be available in “Plugin tab”
+
+	Navigate > Plugins and scroll down “NucleusSegmentation” should be there
+
+3. Then we can select the image dataset and click on “NucleusSegmentation” . It should start the image processing with necessary input dialogs and logs.
+
 
 * In [Eclipse](http://eclipse.org), for example, it is as simple as
   _File &#8250; Import... &#8250; Existing Maven Project_.
