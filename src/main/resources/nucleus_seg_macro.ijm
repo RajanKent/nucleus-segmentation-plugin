@@ -398,5 +398,5 @@ function nucleolus_per_nucleus(nucleus_object_IMG_tit,img_tit,n){
 	imageCalculator("AND stack", "imgDUP","tempDUP_NUCL");
 	
 	selectWindow("imgDUP");	
-	close("tempDUP_NUCL");
+	// close("tempDUP_NUCL");
 }
